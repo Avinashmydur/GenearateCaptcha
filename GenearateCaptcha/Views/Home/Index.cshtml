@@ -1,0 +1,18 @@
+﻿@model GenearateCaptcha.Models.FeedBack
+@using CaptchaMvc.HtmlHelpers
+@using CaptchaMvc;
+@using (Html.BeginForm())
+{
+    @Html.Label("Title")
+    @Html.TextBoxFor(Model => Model.Title)
+    <br />
+    <br />
+    @Html.Label("Comment")
+    @Html.TextAreaFor(Model => Model.Comment, 5, 40, null)
+    //@Html.MathCaptcha()
+    @Html.Captcha(5)
+    <input type="submit" value="Send">
+    <br />
+    <br />
+    <p class="Error">@ViewBag.ErrMessage</p>
+}
